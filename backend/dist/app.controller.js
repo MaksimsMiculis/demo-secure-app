@@ -22,7 +22,7 @@ let AppController = class AppController {
         return this.appService.getHello();
     }
     getUsers() {
-        return;
+        return this.userService.findAll;
     }
 };
 __decorate([
@@ -35,7 +35,7 @@ __decorate([
     common_1.Get('users'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", Array)
+    __metadata("design:returntype", Promise)
 ], AppController.prototype, "getUsers", null);
 AppController = __decorate([
     common_1.Controller(),

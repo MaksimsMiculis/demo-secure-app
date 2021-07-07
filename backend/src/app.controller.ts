@@ -1,5 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
+import { User } from './user/user.entity';
 import { UsersService } from './user/user.service';
 
 @Controller()
@@ -14,7 +15,7 @@ export class AppController {
     return this.appService.getHello();
   }
   @Get('users')
-  getUsers(): Array<any> {
-    return
+  getUsers(): Promise<User[]> {
+    return this.userService.findAll
   }
 }
