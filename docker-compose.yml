@@ -7,9 +7,13 @@ services:
     ports:
       - 5434:5432
 
-  adminer:
-    image: adminer
+  adminer_container:
+    image: adminer:latest
+    environment:
+      ADMINER_DEFAULT_SERVER: database
       ports:
-          - 8080:8080
-      networks:
-          - demonetworkng
+          - 8081:8080
+ 
+
+      # networks: 
+    #   - demo-network
