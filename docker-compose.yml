@@ -6,14 +6,19 @@ services:
       - database.env # configure postgres
     ports:
       - 5434:5432
+    networks: 
+      - demo-network   
 
-  adminer_container:
-    image: adminer:latest
+
+  adminer_container: # connects to db container
+    image: "adminer"
     environment:
       ADMINER_DEFAULT_SERVER: database
-      ports:
-          - 8081:8080
- 
+    ports:
+      - 8081:8080
+    networks: 
+      - demo-network
 
-      # networks: 
-    #   - demo-network
+networks: 
+  demo-network:
+  

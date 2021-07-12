@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PrivateComponent } from './pages/private/private.component';
 import { PublicComponent } from './pages/public/public.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -14,11 +15,12 @@ import { PublicComponent } from './pages/public/public.component';
     HomeComponent,
     PrivateComponent,
     PublicComponent,
-    
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
