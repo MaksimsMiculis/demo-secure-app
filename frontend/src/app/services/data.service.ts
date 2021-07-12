@@ -12,7 +12,11 @@ export class DataService {
     private http: HttpClient,
   ) { }
 
-  getUsers() any {
+  getUsers(): any {
     return this.http.get('http://localhost:3000/users');
+  }
+
+  getPublicUsers(): any {
+    return this.http.get('http://localhost:3000/public-users');
   }
 }

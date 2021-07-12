@@ -6,7 +6,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PrivateComponent } from './pages/private/private.component';
 import { PublicComponent } from './pages/public/public.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoginComponent } from './pages/login/login.component';
+import { FormsModule } from '@angular/forms';
+import { BasicInterceptor } from './interceptors/basic.interceptor';
 
 
 @NgModule({
@@ -15,14 +18,16 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     PrivateComponent,
     PublicComponent,
+    LoginComponent,
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: BasicInterceptor, multi: true },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

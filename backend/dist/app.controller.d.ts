@@ -7,4 +7,5 @@ export declare class AppController {
     constructor(appService: AppService, userService: UsersService);
     getHello(): string;
     getUsers(): Promise<User[]>;
+    getPublicUsers(): Promise<User[]>;
 }

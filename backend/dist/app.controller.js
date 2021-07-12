@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppController = void 0;
 const common_1 = require("@nestjs/common");
+const passport_1 = require("@nestjs/passport");
 const app_service_1 = require("./app.service");
 const user_service_1 = require("./user/user.service");
 let AppController = class AppController {
@@ -24,19 +25,30 @@ let AppController = class AppController {
     getUsers() {
         return this.userService.findAll();
     }
+    getPublicUsers() {
+        return this.userService.findAll();
+    }
 };
 __decorate([
     common_1.Get(),
+    common_1.UseGuards(passport_1.AuthGuard('basic')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", String)
 ], AppController.prototype, "getHello", null);
 __decorate([
+    common_1.UseGuards(passport_1.AuthGuard('basic')),
     common_1.Get('users'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], AppController.prototype, "getUsers", null);
+__decorate([
+    common_1.Get('public-users'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], AppController.prototype, "getPublicUsers", null);
 AppController = __decorate([
     common_1.Controller(),
     __metadata("design:paramtypes", [app_service_1.AppService,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-public',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PublicComponent implements OnInit {
 
-  constructor() { }
+
+  users = [{ name: "Maksims", lastname: "Michulis" }]
+  constructor(
+    private dataService: DataService
+
+  ) { }
 
   ngOnInit(): void {
+    this.dataService.getPublicUsers().subscribe(
+      users => { this.users = users; }
+    )
   }
 
 }

@@ -5,7 +5,18 @@ import { BasicStrategy } from './auth-basic.strategy';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [PassportModule, ConfigModule],
+  imports: [ConfigModule,
+  
+    PassportModule.register({
+      defaultStrategy: 'basic',
+      property: 'user',
+      session: false,
+  }),
+
+  
+  ],
   providers: [BasicStrategy],
 })
 export class AuthModule {}
+
+

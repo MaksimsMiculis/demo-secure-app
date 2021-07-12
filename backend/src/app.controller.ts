@@ -16,8 +16,16 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @UseGuards(AuthGuard('basic'))
   @Get('users')
   getUsers(): Promise<User[]> {
+    return this.userService.findAll();
+  }
+
+  
+  @Get('public-users')
+  getPublicUsers(): Promise<User[]> {
     return this.userService.findAll();
   }
 }
