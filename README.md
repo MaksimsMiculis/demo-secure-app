@@ -29,8 +29,7 @@ Password : demo
 
 Database : demo
 ```
-### Angular UI
-Navigate to 
+### Navigation
 
 `localhost:4200` - home page
 
