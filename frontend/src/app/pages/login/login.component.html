@@ -1,7 +1,35 @@
-<form>
-    <label>Username</label>
-    <input [(ngModel)]="username" name="username">
-    <label>Password</label>
-    <input [(ngModel)]="password" name="password" type="password">
-    <input type="submit" (click)="login()" value="Login">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <button onclick="location.href='/home'" type="button">home page</button>
+    <button onclick="location.href='/private'" type="button">secure</button>
+    <button onclick="location.href='/public'" type="button">public</button>
+
+    <div class="jumbotron text-center">
+        <h1>secure</h1>
+    </div>
+
+
+
+    <form>
+        <label>Username</label>
+        <input [(ngModel)]="username" name="username">
+        <label>Password</label>
+        <input [(ngModel)]="password" name="password" type="password">
+        <input type="submit" (click)="login()" value="Login">
+    </form>
+</body>
+
+</html>
