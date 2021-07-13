@@ -1,6 +1,3 @@
-## About
-Simple web app based on Nest.js, Angular, PostgreSql with Basic authentication
-
 ### Installation
 
 Install all dependencies from the root and frontend/backend directories
