@@ -2,7 +2,11 @@
 
 Install all dependencies from the root and frontend/backend directories
 
-`npm install`
+`cd ./demo-secure-app$ npm install`
+
+`cd ./demo-secure-app/frontend$ npm install`
+
+`cd ./demo-secure-app/backend$ npm install`
 
 ### Start docker containers with Postgress DB and Adminer (database managment tools)
 `cd ./demo-secure-app$ docker-compose up`
